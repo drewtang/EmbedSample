@@ -2,12 +2,16 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Standard OG Metadata !-->
     <meta property="og:title" content="Drew's Embed Sample" />
     <meta property="og:type" content="document" />
     <meta property="og:image" content="https://infos.seibert-media.net/download/attachments/11208709/yammer-embed-html-snippet-code.jpg" />
     <meta property="og:description" content="Embed Sample for my Growth technical presentation" />
     <meta property="og:site_name" content="Dropbox" />
+
+    <!-- Yammer Library !-->
     <script data-app-id="hyB2pTvrL36Y50py8EWj6A" src="https://assets.yammer.com/platform/yam.js"></script>
+
     <style type="text/css">
       #embedded-feed {
         width: 800px;
@@ -17,7 +21,8 @@
       }
     </style>
   </head>
-  <body>
+  <body> 
+    <!-- Insert Yammer Objects !-->
     <script>
       yam.connect.embedFeed({
         container: "#embedded-feed",
