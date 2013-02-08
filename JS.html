@@ -4,12 +4,27 @@
   <head>
     <!-- Yammer Library !-->
     <script data-app-id="hyB2pTvrL36Y50py8EWj6A" src="https://assets.yammer.com/platform/yam.js"></script>
-    <span id="yammer-login"></span>
   </head>
   <body>
-    <script> yam.connect.loginButton('#yammer-login', function (resp) 
-      { if (resp.authResponse) 
-        { document.getElementById('yammer-login').innerHTML = 'Welcome to Yammer!'; } 
+    <!-- Connect Button !-->
+    <span id="yammer-login"></span>
+
+    <!-- Button Code !-->
+    <script>
+      yam.connect.loginButton('#yammer-login', function (resp) {
+        if (resp.authResponse) {
+          yam.request({
+            url: "https://www.yammer.com/api/v1/users.json",     //this is one of many REST endpoints that are available
+            method: "GET",
+            success: function (user) { //print message response information to the console
+              console.dir(user);
+              document.getElementById('yammer-login').innerHTML = 'You gots users.'; 
+            },
+            error: function (users) {
+              alert("There was an error with the request.");
+            }
+          });
+        }
       }); 
     </script>
   </body>
