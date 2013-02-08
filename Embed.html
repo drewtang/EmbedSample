@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta property="og:title" content="Drew's Embed Sample" />
+    <meta property="og:type" content="document" />
+    <meta property="og:image" content="https://infos.seibert-media.net/download/attachments/11208709/yammer-embed-html-snippet-code.jpg" />
+    <meta property="og:description" content="Embed Sample for my Growth technical presentation" />
+    <meta property="og:site_name" content="Dropbox" />
+    <script data-app-id="hyB2pTvrL36Y50py8EWj6A" src="https://assets.yammer.com/platform/yam.js"></script>
+    <style type="text/css">
+      #embedded-feed {
+        width: 800px;
+        height:650px;
+      }
+      #embedded-like{
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      yam.connect.embedFeed({
+        container: "#embedded-feed",
+        feedType: "open-graph"
+      });
+      yam.connect.actionButton({
+        container: "#embedded-like",
+        action: "like"
+      });
+      yam.connect.actionButton({
+        container: "#embedded-follow",
+        action: "follow"
+      });
+    </script>
+    <div id="embedded-feed"></div>
+    <div id="embedded-like"></div>
+    <div id="embedded-follow"></div>
+  </body>
+</html>
